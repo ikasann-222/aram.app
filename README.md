@@ -22,33 +22,11 @@ npm run preview
 ```
 
 ## GitHub Pages 公開
-1. リポジトリの **Settings > Pages > Source** を **GitHub Actions** に設定（最初の1回だけ）。
-2. `main` ブランチにPRをマージすると、このリポジトリの workflow が自動で `build` → `deploy` します。
-3. PR作成時は `build` だけ走るので、壊れていないか先に確認できます。
-4. 公開URLは `https://<ユーザー名>.github.io/<リポジトリ名>/` です。
 
-## PR後の公開手順（最初から）
-1. GitHubでPRを作成し、`main` にマージする。
-2. リポジトリの **Settings > Pages** を開き、Sourceを **GitHub Actions** にする（初回のみ）。
-3. **Actions** タブで `Build & Deploy GitHub Pages` を開く。
-4. `push` イベントの実行が `build` → `deploy` ともに成功していることを確認。
-5. 成功後、`deploy` ジョブ内ログの `Deployed to ...` URLを開く。
-6. 通常URL: `https://<ユーザー名>.github.io/<リポジトリ名>/`。
-7. 反映が遅い場合は1〜5分待って再読み込み。
-
-## 公開できないときの不明点チェック
-- Pages Sourceが `Deploy from a branch` になっていないか（`GitHub Actions` 必須）。
-- Actions が `pull_request` 実行しかなく、`push to main` 実行がない（= 未マージ）。
-- Actions で `npm install` / `npm run build` が失敗していないか。
-- URLが `https://<ユーザー名>.github.io/<リポジトリ名>/` 形式か。
-- ブラウザキャッシュを強制リロードしたか（Cmd/Ctrl+Shift+R）。
-
-## 開けないときの最短チェック
-1. **GitHubに push 済みか**を確認。
-2. リポジトリの **Settings > Pages** で `Build and deployment` を `GitHub Actions` に設定。
-3. **Actions** タブで `Build & Deploy GitHub Pages` が成功しているか確認。
-4. 公開URLは通常 `https://<ユーザー名>.github.io/<リポジトリ名>/`。
-5. 反映まで 1〜5分程度かかる場合があります。
+1. `vite.config.ts` の `base: './'` を利用（リポジトリ名サブパスでも動作しやすい設定）。
+2. `npm run build` で `dist/` を生成。
+3. GitHub の Pages 設定で `GitHub Actions` か `gh-pages` ブランチ配信を選択。
+4. 例: `gh-pages` ブランチに `dist` を配置して公開。
 
 ## 実装済み機能 (MVP)
 - アラーム一覧（追加/編集/削除/ON-OFF）
