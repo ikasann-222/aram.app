@@ -1,0 +1,126 @@
+:root {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #17212f;
+  background: #f1f5f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  width: min(100%, 560px);
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(2, 8, 23, 0.08);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.clock,
+.big {
+  font-weight: 700;
+}
+
+.big {
+  font-size: 2rem;
+}
+
+label,
+input,
+select,
+button {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input,
+select,
+button {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0dae6;
+}
+
+button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.list {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.alarm-row {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.alarm-actions {
+  display: grid;
+  justify-items: end;
+}
+
+.tap-btn {
+  min-height: 120px;
+  font-size: 2rem;
+}
+
+.poem-box {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  white-space: pre-line;
+}
+
+.history {
+  padding-left: 18px;
+}
+
+@media (max-width: 480px) {
+  .row,
+  .alarm-row {
+    flex-direction: column;
+  }
+
+  .alarm-actions {
+    justify-items: stretch;
+  }
+}
