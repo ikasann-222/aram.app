@@ -22,6 +22,7 @@ npm run preview
 ```
 
 ## GitHub Pages 公開
+
 1. `vite.config.ts` の `base: './'` を利用（リポジトリ名サブパスでも動作しやすい設定）。
 2. `npm run build` で `dist/` を生成。
 3. GitHub の Pages 設定で `GitHub Actions` か `gh-pages` ブランチ配信を選択。
